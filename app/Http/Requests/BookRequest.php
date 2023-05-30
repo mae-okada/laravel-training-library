@@ -31,7 +31,8 @@ class BookRequest extends FormRequest
             'language'      => 'nullable',
             'publish_date'  => 'nullable',
             'subjects'      => 'nullable',
-            'desc'          => 'nullable'
+            'desc'          => 'nullable',
+            'image_path'    => 'nullable',
         ];
     }
 }

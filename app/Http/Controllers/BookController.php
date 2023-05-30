@@ -85,7 +85,7 @@ class BookController extends Controller
         $book->publish_date = $validatedData['publish_date'];
         $book->subjects     = $validatedData['subjects'];
         $book->desc         = $validatedData['desc'];
-        $book->image_path   = 'http://www.hachette.co.nz/graphics/CoverNotAvailable.jpg';
+        $book->image_path   = $validatedData['image_path'];
         $book->save();
 
         // return redirect()->route('books.index');
@@ -133,7 +133,7 @@ class BookController extends Controller
         $book->publish_date = $validatedData['publish_date'];
         $book->subjects     = $validatedData['subjects'];
         $book->desc         = $validatedData['desc'];
-        $book->image_path   = 'http://www.hachette.co.nz/graphics/CoverNotAvailable.jpg';
+        $book->image_path   = $validatedData['image_path'];
         $book->save();
 
         // return redirect()->route('books.show',$book->id);

@@ -28,8 +28,6 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register']);
 
 Auth::routes();
-
-Route::get('/',[BookController::class,'index'])->name('books.index');
 // Route::get('/detail',[BookController::class,'detail']);
 // Route::get('/detail/{id?}',[BookController::class,'detail']);
 // Route::get('/detail/{id}', [BookController::class, 'detail'])->name('book.detail');
@@ -38,11 +36,22 @@ Route::get('/',[BookController::class,'index'])->name('books.index');
 
 // route buat action form
 // Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
-Route::get('/books/create', [BookController::class, 'create'])->name("books.create");
-Route::post('/books', [BookController::class, 'store'])->name('books.store');
+Route::get('/',[BookController::class,'index'])->name('books.index');
 Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
-Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('books.edit');
-Route::post('/update/{id}', [BookController::class, 'update'])->name('books.update');
-Route::delete('/books/{id}/destroy', [BookController::class, 'destroy'])->name('books.destroy');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+        Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+        Route::post('/books', [BookController::class, 'store'])->name('books.store');
+        Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('books.edit');
+        Route::post('/update/{id}', [BookController::class, 'update'])->name('books.update');
+        Route::delete('/books/{id}/destroy', [BookController::class, 'destroy'])->name('books.destroy');
+});
+
+// Route::get('/books/create', [BookController::class, 'create'])->name("books.create");
+// Route::post('/books', [BookController::class, 'store'])->name('books.store');
+// Route::get('/books/{id}/edit', [BookController::class, 'edit'])->name('books.edit');
+// Route::post('/update/{id}', [BookController::class, 'update'])->name('books.update');
+// Route::delete('/books/{id}/destroy', [BookController::class, 'destroy'])->name('books.destroy');
+

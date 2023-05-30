@@ -38,8 +38,10 @@
                   <!-- <button type="submit" class="btn btn-default"></button> -->
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="./login.html">Login</a></li>
-                  <li class="disabled"><a href="#">Signup</a></li>
+                  <li><a href="/login">Login</a></li>
+                  <li><a href="/logout">Logout</a></li>
+                  <li><a href="/home">Signup</a></li>
+                  {{-- <li class="disabled"><a href="#">Signup</a></li> --}}
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

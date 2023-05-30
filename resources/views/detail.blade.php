@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 <!-- item cards -->
@@ -8,9 +8,17 @@
               <div class="thumbnail">
                 <div class="row">
                   <div class="col-sm-6 col-md-4">
-                    <img src="{{ $book->image_path }}" class="pt-10 pb-10 pl-10" width="250px">
+
                     <div class="text-center">
-                      <a href="#" class="btn btn-default mt-10 mb-10" role="button">Borrow</a>
+                      <img src="{{ $book->image_path }}" class="pt-10 pb-10 pl-10" width="250px">
+                      <div><br></div>
+                      {{-- <a href="#" class="btn btn-default mt-10 mb-10" role="button">Borrow</a> --}}
+                      <form action="{{ route('books.destroy', $book->id) }}" method="POST">
+                        @csrf
+                        <a href="{{ route('books.edit', $book->id) }}" class="btn btn-success btn-sm" role="button">Update</a>
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                      </form>
                       <!-- <a href="#" class="btn btn-default" role="button">Buy</a> -->
                     </div>
                   </div>

@@ -22,7 +22,8 @@ class Book extends Model
         'language'      ,
         'publish_date'  ,
         'subjects'      ,
-        'desc'
+        'desc'          ,
+        'image_path'
     ];
     use SoftDeletes;
     public function author()

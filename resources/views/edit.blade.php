@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="container mt-5">
@@ -56,10 +56,14 @@
                             <label>Description</label>
                             <input type="text" name="desc" value="{{ $book->desc }}" class="form-control">
                         </div>
+                        <div class="container-fluid">
+                            <label>Image URL</label>
+                            <input type="text" name="desc" value="{{ $book->image_path }}" class="form-control">
+                        </div>
                         <br>
                         <div class="container-fluid">
                             <input type="submit" value="Submit">
-                            {{-- <a href="/index" class="btn btn-danger float-end">Cancel</a> --}}
+                            <a href="/" class="btn btn-danger float-end">Cancel</a>
                         </div>
                         <br>
                     </form>

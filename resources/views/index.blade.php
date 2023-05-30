@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="container mt-5">
@@ -24,15 +24,10 @@
                                         <p>{{ $book->desc }}</p>
 
                                         <div class="text-center">
-
                                             {{-- <a href="{{ route('books.destroy', $book->id) }}" class="btn btn-danger" role="button">Delete</a> --}}
-                                            <form action="{{ route('books.destroy', $book->id) }}" method="POST">
-                                                @csrf
-                                                    <div><a href="{{ route('books.show', $book->id) }}" class="btn btn-default btn-sm" role="button">Show Detail</a></div>
-                                                    <div><a href="{{ route('books.edit', $book->id) }}" class="btn btn-success btn-sm" role="button">Update</a></div>
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                             </form>
+                                            @csrf
+                                            <div><a href="{{ route('books.show', $book->id) }}" class="btn btn-default btn-sm" role="button">Show Detail</a></div>
+                
                                              {{-- <button type="submit" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">Delete</button> --}}
 
                                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
