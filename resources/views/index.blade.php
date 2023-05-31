@@ -7,7 +7,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="h4">List of Books</div>
+                        @guest
+                        @else
                         <a href="{{ route('books.create') }}" class="btn btn-primary float-left" role="button">Add Book</a>
+                        @endguest                    
                     </div>
                     <br>
                     <!-- item cards -->

@@ -9,21 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('_authors', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 150);
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+    // public function up(): void
+    // {
+    //     Schema::create('_authors', function (Blueprint $table) {
+    //         $table->id();
+    //         $table->string('name', 150);
+    //         $table->timestamps();
+    //         $table->softDeletes();
+    //     });
+    // }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('_authors');
-    }
+    // /**
+    //  * Reverse the migrations.
+    //  */
+    // public function down(): void
+    // {
+    //     Schema::dropIfExists('_authors');
+    // }
 };

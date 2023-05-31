@@ -12,6 +12,8 @@
                     <div class="text-center">
                       <img src="{{ $book->image_path }}" class="pt-10 pb-10 pl-10" width="250px">
                       <div><br></div>
+                      @guest
+                      @else
                       {{-- <a href="#" class="btn btn-default mt-10 mb-10" role="button">Borrow</a> --}}
                       <form action="{{ route('books.destroy', $book->id) }}" method="POST">
                         @csrf
@@ -19,6 +21,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                       </form>
+                      @endguest
                       <!-- <a href="#" class="btn btn-default" role="button">Buy</a> -->
                     </div>
                   </div>
